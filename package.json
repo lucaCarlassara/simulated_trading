@@ -1,1 +1,1 @@
-{"name":"simulated-trading","version":"0.1.0","private":true,"scripts":{"start":"node server.js"}}
+{"name":"simulated-trading","version":"0.1.0","private":true,"scripts":{"start":"node server.js"},"dependencies":{"@netlify/blobs":"^8.1.0"}}
