@@ -1,11 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello World</title>
+    <title>PaperPocket</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <main class="phone-shell">
+      <section class="phone">
+        <header class="topbar"><div><p class="eyebrow">PaperPocket</p><h1>Il tuo portafoglio</h1></div><button id="refreshButton" class="icon-button" aria-label="Aggiorna quotazioni">↻</button></header>
+        <section class="balance-card"><p>Valore totale</p><strong id="portfolioValue">€ 0,00</strong><span id="portfolioGain" class="gain">—</span><div class="cash-row"><span>Liquidità virtuale</span><b id="cashBalance">€ 10.000,00</b></div></section>
+        <nav class="tabs"><button class="tab active" data-tab="market">Mercati</button><button class="tab" data-tab="portfolio">Portafoglio</button></nav>
+        <section id="market" class="tab-panel active"><div class="section-heading"><h2>Da tenere d'occhio</h2><span id="quoteStatus">Quotazioni aggiornate</span></div><div id="quoteList" class="quote-list"></div></section>
+        <section id="portfolio" class="tab-panel"><div class="section-heading"><h2>I tuoi titoli</h2><span id="positionCount">0 posizioni</span></div><div id="positionList" class="position-list"></div><div class="history-heading"><h2>Operazioni</h2></div><div id="tradeList" class="trade-list"></div></section>
+      </section>
+    </main>
+    <dialog id="tradeDialog"><form id="tradeForm" method="dialog"><button class="close-button" value="cancel" aria-label="Chiudi">×</button><p class="eyebrow">Ordine simulato</p><h2 id="tradeTitle">Acquista</h2><p id="tradePrice" class="dialog-price"></p><label>Quantità<input id="quantityInput" type="number" min="1" step="1" value="1" required></label><p id="tradeEstimate" class="estimate"></p><button id="confirmTrade" class="primary-button" value="default">Conferma acquisto</button><p id="tradeError" class="form-error"></p></form></dialog>
+    <template id="quoteTemplate"><article class="quote-card"><div class="symbol-badge"></div><div class="quote-name"><b></b><span></span></div><div class="quote-price"><b></b><span></span></div><button class="buy-button">Acquista</button></article></template>
+    <script src="app.js"></script>
   </body>
 </html>
